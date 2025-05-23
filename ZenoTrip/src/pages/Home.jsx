@@ -1,10 +1,12 @@
 import React from 'react'
 import Hero from '../components/home/Hero'
+import PopularTour from '../components/home/PopularTour'
 
 function Home() {
   return (
-    <div>
+    <div className='space-y-5'>
         <Hero/>
+        <PopularTour/>
       
     </div>
   )

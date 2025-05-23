@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 border-b border-gray-700 pb-10">
         {/* Logo and Branding */}
         <div className="md:col-span-1 flex flex-col  items-center">
-          <img src="public/logo/logo3.png" alt="Tours to Tuscany" className="w-24 " />
+          <img src="/ZenoTrip/logo/logo3.png" alt="Tours to Tuscany" className="w-24 " />
           <p>ZenoTrip</p>
         </div>
 

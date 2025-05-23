@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button({label}) {
+function Button({label,onClick}) {
   return (
-    <button className='bg-color rounded text-white px-4 py-2'>{label}</button>
+    <button onClick={onClick} className='bg-[#FA8B02] rounded border border-[#FA8B02] w-full hover:border-[#FA8B02] hover:bg-transparent hover:text-[#FA8B02] text-white px-4 py-2'>{label}</button>
   )
 }
 

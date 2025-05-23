@@ -11,16 +11,16 @@ import {
 
 const TourFilter = () => {
   return (
-    <div className="bg-white rounded-lg w-full lg:w-fit shadow-sm p-6 ">
+    <div className="bg-white rounded-lg w-full lg:w-fit shadow-sm p-4 ">
      
 
-      <div className="lg:flex lg:flex-wrap grid grid-cols-2 justify-evently lg:flex-row gap-6 md:gap-10 lg:gap-12 ">
+      <div className="lg:flex  lg:flex-wrap grid grid-cols-2 justify-evently lg:flex-row gap-6 md:gap-10 lg:gap-12 ">
         {/* People */}
-        <div className="flex items-start gap-2">
+        <div className="flex  items-start gap-2">
           <Users className="text-gray-500 mt-1" size={18} />
-          <div>
+          <div className=''>
             <div className="font-medium text-gray-800">Number of people</div>
-            <select className="text-sm text-gray-500 focus:outline-none">
+            <select className="text-sm text-gray-500  focus:outline-none">
               <option>Choose number</option>
               <option>1</option>
               <option>2</option>
@@ -82,7 +82,7 @@ const TourFilter = () => {
             </select>
           </div>
         </div>
-
+         <br className='block lg:hidden' />
         {/* Search Button */}
         <button className="bg-orange-500 text-white p-3 w-fit rounded-lg hover:bg-orange-600 transition">
           <Search size={20} />
