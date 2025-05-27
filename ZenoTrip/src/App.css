@@ -21,6 +21,8 @@ font-family: "Poppins", sans-serif;
   background-color: #FA8B02;
 }
 
+
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

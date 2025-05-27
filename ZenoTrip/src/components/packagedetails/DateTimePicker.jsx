@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
-import { PurchaseContext } from "../../context/PurchaseContext";
+import { TicketContext } from "../../context/TicketContext";
 
 const times = [
   "10:00 AM", "11:00 AM", "12:00 PM",
@@ -14,7 +14,7 @@ const DateTimePicker = ({tourdetails}) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState("");
   const navigate = useNavigate()
-  const {bookticket}=useContext(PurchaseContext)
+  const {bookticket}=useContext(TicketContext)
 
   const formattedDate = selectedDate ? selectedDate.toISOString().split('T')[0] : null;
   const bookingdata = { selectedDate: formattedDate, selectedTime, tourdetails,adult:0,child:0 };
@@ -25,7 +25,7 @@ const DateTimePicker = ({tourdetails}) => {
   const handleBuyNow = () => {
 
     bookticket(bookingdata)
-    navigate('/packages')
+    navigate('/purchase')
   };
 
   return (

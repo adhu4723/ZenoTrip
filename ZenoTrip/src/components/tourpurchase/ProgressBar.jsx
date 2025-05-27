@@ -10,7 +10,7 @@ const steps = [
 
 const ProgressBar = ({ currentStep }) => {
   return (
-    <div className="flex items-center max-w-3xl mx-auto justify-between py-8 w-full">
+    <div className="flex items-center max-w-3xl mx-auto justify-between py- w-full ">
   {steps.map((step, index) => {
     const isCompleted = step.id < currentStep;
     const isActive = step.id === currentStep;

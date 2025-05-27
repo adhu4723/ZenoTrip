@@ -4,15 +4,18 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter, HashRouter } from 'react-router-dom'
 import { Authprovider } from './context/AuthContext.jsx'
-import { PurchaseProvider } from './context/PurchaseContext.jsx'
+import { TicketProvider } from './context/TicketContext.jsx'
+import { FilterProvider } from './context/FilterContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
       <Authprovider>
-        <PurchaseProvider>
+        <TicketProvider>
+          <FilterProvider>
           <App />
-        </PurchaseProvider>
+          </FilterProvider>
+        </TicketProvider>
       </Authprovider>
     </HashRouter>
   </StrictMode>,

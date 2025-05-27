@@ -8,7 +8,7 @@ function TourCard({data}) {
     <div className='w-[300px]  space-y-2'>
         <img className='h-[250px] rounded-2xl' src={data?data.images[0]:"public/images/tour/Rectangle 16.png"} alt="" />
         <h1 className='lg:text-xl text-lg font-semibold'>{data?.packagename||'Lucca Bike Tour'}</h1>
-        <p>from <span className='font-semibold text-color lg:text-2xl'>{data.price} €</span> </p>
+        <p>from <span className='font-semibold text-color lg:text-2xl'>₹{data.adultprice} </span> </p>
         <div className='flex justify-between'>
             <div className='flex gap-2 items-center text-color'><CalendarDays size={20}/>EVERY DAY</div>
             <div  className='flex gap-2 text-color items-center'><UsersRound size={20}/>3-10 PP</div>

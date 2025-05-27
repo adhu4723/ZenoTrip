@@ -141,8 +141,8 @@ export const Tourdata = [
         images: [
             'https://images.unsplash.com/photo-1476362174823-3a23f4aa6d76?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'https://images.unsplash.com/photo-1516186366443-0744a82bffef?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            'public/images/tour/Florence/Rectangle 41.png',
-            'public/images/tour/Florence/Rectangle 42.png'
+            'https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=450,height=450,dpr=2/tour_img/fe0276b643bf922db86186c25e4eb610548cbdde25cf79f7eb570b5a7b8b70c4.jpg',
+            'https://www.florencetown.com/public/tours/full/1550586663_Private_Duomo_Sky_Walk.jpeg'
         ],
         gallery: [
             'public/images/tour/Florence/Rectangle 43.png',

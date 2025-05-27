@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Users,
   Calendar,
@@ -8,8 +8,19 @@ import {
   Globe,
   Search
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { FilterContext } from '../../context/FilterContext';
 
 const TourFilter = () => {
+  const navigate=useNavigate()
+  const [tourName,setTourName]=useState('')
+  const {handlesearchData}=useContext(FilterContext)
+
+  const handlesearch=()=>{
+handlesearchData(tourName)
+ navigate('/search')
+
+  }
   return (
     <div className="bg-white rounded-lg w-full lg:w-fit shadow-sm p-4 ">
      
@@ -30,7 +41,7 @@ const TourFilter = () => {
         </div>
 
         {/* Date */}
-        <div className="flex items-start gap-2 border-l pl-">
+        <div className="flex items-start gap-2  pl-">
           <Calendar className="text-gray-500 mt-1" size={18} />
           <div>
             <div className="font-medium text-gray-800">Date</div>
@@ -42,7 +53,7 @@ const TourFilter = () => {
         </div>
 
         {/* Time */}
-        <div className="flex items-start gap-2 border-l pl-">
+        <div className="flex items-start gap-2  pl-">
           <Clock className="text-gray-500 mt-1" size={18} />
           <div>
             <div className="font-medium text-gray-800">Time</div>
@@ -56,21 +67,26 @@ const TourFilter = () => {
         </div>
 
         {/* Tour */}
-        <div className="flex items-start gap-2 border-l pl-">
+        <div className="flex items-start gap-2  pl-">
           <Flag className="text-gray-500 mt-1" size={18} />
           <div>
             <div className="font-medium text-gray-800">Tour</div>
-            <select className="text-sm text-gray-500 focus:outline-none">
+            <select  onClick={(e)=>setTourName(e.target.value)} className="text-sm text-gray-500 focus:outline-none">
               <option>Select Tour</option>
-              <option>Lucca Tour</option>
-              <option>Bike Tour</option>
-              <option>Wine Tour</option>
+              <option>Lucca Bike Tour</option>
+              <option>Wine tasting In Tuscany</option>
+              <option>Cinque Terre Tour</option>
+              <option>Siena and Surroundings</option>
+              <option >Tour of the Lucca Hills</option>
+              <option >Gardaland, Verona</option>
+              <option >Pisa & Lucca</option>
+              <option >Florence</option>
             </select>
           </div>
         </div>
 
         {/* Transportation */}
-        <div className="flex items-start gap-2 border-l pl-">
+        <div className="flex items-start gap-2  pl-">
           <Car className="text-gray-500 mt-1" size={18} />
           <div>
             <div className="font-medium text-gray-800">Transportation</div>
@@ -84,7 +100,7 @@ const TourFilter = () => {
         </div>
          <br className='block lg:hidden' />
         {/* Search Button */}
-        <button className="bg-orange-500 text-white p-3 w-fit rounded-lg hover:bg-orange-600 transition">
+        <button onClick={handlesearch} className="bg-orange-500 text-white p-3 w-fit rounded-lg hover:bg-orange-600 transition">
           <Search size={20} />
         </button>
       </div>

@@ -6,16 +6,21 @@ export const Authprovider=({children})=>{
 
     const [isAuth,setisAuth]=useState(false)
 
-    const login=()=>{
+    const login=(e)=>{
+        e.preventDefault()
         setisAuth(true)
-        
-        
+        console.log('cli');
+       
+    }
+
+    const logout =()=>{
+        setisAuth(false)
     }
 
     console.log(isAuth);
 
     return (
-        <AuthContext.Provider value={{login,isAuth}}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{login,isAuth,logout}}>{children}</AuthContext.Provider>
     )
 }
 

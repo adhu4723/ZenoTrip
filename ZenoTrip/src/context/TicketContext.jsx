@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 
-export const PurchaseContext = createContext();
+export const TicketContext = createContext();
 
-export const PurchaseProvider = ({ children }) => {
+export const TicketProvider = ({ children }) => {
     const [ticket, setTicket] = useState('');
     const [adultCount, setAdultCount] = useState(0);
     const [childCount, setChildCount] = useState(0);
@@ -14,14 +14,18 @@ export const PurchaseProvider = ({ children }) => {
     setChildCount(0);
     setInfantCount(0);
 
+   
+
     // Initialize ticket with counts and totalPrice = 0
     setTicket({
         ...bookingdata,
         adult: 0,
         child: 0,
         infant: 0,
+        ispayed:false,
         totalPrice: 0
     });
+   
 };
 
     const calculateTotalPrice = (adult, child, adultPrice, childPrice) => {
@@ -70,8 +74,13 @@ export const PurchaseProvider = ({ children }) => {
         setTicket(prev => ({ ...prev, infant: newCount }));
     };
 
+    const makepayment=()=>{
+                setTicket(prev => ({ ...prev, ispayed:true }));
+
+    }
+
     return (
-        <PurchaseContext.Provider
+        <TicketContext.Provider
             value={{
                 ticket,
                 bookticket,
@@ -80,10 +89,13 @@ export const PurchaseProvider = ({ children }) => {
                 incrementChild,
                 decrementChild,
                 incrementInfant,
-                decrementInfant
+                decrementInfant,
+                makepayment,
+                adultCount,
+                childCount
             }}
         >
             {children}
-        </PurchaseContext.Provider>
+        </TicketContext.Provider>
     );
 };

@@ -10,20 +10,31 @@ import Layout from './layout/Layout'
 import PackageDetails from './pages/PackageDetails'
 import TourPurchase from './pages/TourPurchase'
 import NotFound from './pages/NotFound'
+import ProtectRoute from './components/ProtectRoute'
+import AboutUs from './pages/AboutUs'
+import ScrollToTop from './components/ScrollToTop'
+import TourPackages from './pages/TourPackages'
+import SearchResult from './pages/SearchResult'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Routes> 
-      <Route element={<Layout/>}>
-      <Route path='/' element={<Home/>}></Route>
-       <Route path='/packagedetails/:id' element={<PackageDetails/>}></Route>
-       <Route path='/packages' element={<TourPurchase/>}/>
-       <Route path='/*' element={<NotFound/>}></Route>
-      </Route>
-       </Routes>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/packagedetails/:id' element={<PackageDetails />}></Route>
+          <Route element={<ProtectRoute />}>
+          <Route path='/purchase' element={<TourPurchase />} />
+          </Route>
+          <Route path='/about' element={<AboutUs />}></Route>
+          <Route path='/search' element={<SearchResult />}></Route>
+          <Route path='/packages' element={<TourPackages />}></Route>
+          <Route path='/*' element={<NotFound />}></Route>
+        </Route>
+      </Routes>
     </>
   )
 }

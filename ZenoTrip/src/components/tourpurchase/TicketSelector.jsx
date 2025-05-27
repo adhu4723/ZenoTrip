@@ -1,6 +1,5 @@
 // src/components/TicketSelector.jsx
 import React, { useContext } from 'react';
-import { PurchaseContext } from '../../context/PurchaseContext';
 
 const TicketSelector = ({ title, ageRange, notes = [], price, quantity, onIncrement, onDecrement }) => {
 
@@ -16,7 +15,7 @@ const TicketSelector = ({ title, ageRange, notes = [], price, quantity, onIncrem
             <li key={i}>{note}</li>
           ))}
         </ul>
-        <p className="text-orange-500 font-bold mt-2">€{price.toFixed(2)}</p>
+        <p className="text-orange-500 font-bold mt-2">₹{price.toFixed(2)}</p>
       </div>
 
       {/* Quantity Controls */}

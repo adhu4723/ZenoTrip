@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { Outlet } from 'react-router-dom'
 import Account from '../components/Auth/Account'
+import { AuthContext } from '../context/AuthContext'
 
 function Layout() {
+  const  {isAuth}=useContext(AuthContext)
   const [show, setShow] = useState(false)
-
+   useEffect(()=>{
+ setShow(!isAuth)
+   },[isAuth])
   
 
   const toggleAuth = () => {
@@ -23,7 +27,7 @@ function Layout() {
       <Navbar showAuth={toggleAuth} />
       <main className="flex-grow">
         {show && <Account onClose={closeAuth} />}
-        <div className='my-10'>
+        <div className='my-5'>
         <Outlet />
         </div>
       </main>

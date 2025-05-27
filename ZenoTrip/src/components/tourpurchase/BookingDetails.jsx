@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import TicketSelector from './TicketSelector';
 import TicketCard from './TicketCard';
-import { PurchaseContext } from '../../context/PurchaseContext';
+import { TicketContext } from '../../context/TicketContext';
 
 const BookingDetails = ({ onNext }) => {
   const {
@@ -12,7 +12,7 @@ const BookingDetails = ({ onNext }) => {
     decrementChild,
     incrementInfant,
     decrementInfant
-  } = useContext(PurchaseContext);
+  } = useContext(TicketContext);
 
   console.log(ticket);
   
@@ -54,7 +54,7 @@ const BookingDetails = ({ onNext }) => {
           ageRange="6–17"
           notes={["With valid ID", "Only in combination with: Adult (18+)"]}
           price={ticket.tourdetails?.childprice||0}
-          quantity={ticket?.child }
+          quantity={ticket?.child||0 }
           onIncrement={incrementChild}
           onDecrement={decrementChild}
         />
