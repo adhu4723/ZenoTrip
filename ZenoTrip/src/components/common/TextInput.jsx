@@ -7,6 +7,7 @@ const TextInput = ({
   onChange,
   name,
   bgcolor,
+  required,
   type = "text" // default to 'text' if not provided
 }) => {
   return (
@@ -26,6 +27,7 @@ const TextInput = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        required={required}
         className={`w-full px-4 py-2 ${bgcolor?`bg-${bgcolor}`:''} rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400`}
       />
     </div>

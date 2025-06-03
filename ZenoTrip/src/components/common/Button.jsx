@@ -1,8 +1,9 @@
 import React from 'react'
+import Loader from './Loader'
 
-function Button({label,onClick,outlined}) {
+function Button({label,onClick,outlined,loading}) {
   return (
-    <button onClick={onClick} className={` ${outlined?'bg-white border-amber-500 text-amber-500 hover:bg-[#FA8B02] hover:text-white  ':'bg-[#FA8B02] text-white hover:border-[#FA8B02] hover:bg-transparent hover:text-[#FA8B02] '}  rounded border border-[#FA8B02] w-full  px-4 py-2`}>{label}</button>
+    <button onClick={onClick} className={`${loading?'bg-gray-300 border-white text-white':'bg-[#FA8B02] '} ${outlined?'bg-white border-amber-500 text-amber-500 ':'bg-[#FA8B02] text-white  '}  rounded border border-[#FA8B02] w-full  px-4 py-2`}>{loading?<Loader/>: label}</button>
   )
 }
 

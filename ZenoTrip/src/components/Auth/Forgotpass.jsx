@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Key } from 'lucide-react';
 import TextInput from '../common/TextInput';
 import Button from '../common/Button';
+import { AuthContext } from '../../context/AuthContext';
 
-function ForgotPassword({ onBack ,onclick}) {
+function ForgotPassword({ onBack, onclick }) {
+  const { loading } = useContext(AuthContext);
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const handleResetClick = () => {
+    if (!email.trim()) {
+      setError('Email is required');
+      return;
+    }
+
+    setError('');
+    if (onclick) {
+      onclick(email, setError); // Pass control to parent
+    }
+  };
+
   return (
-    <div className="flex items-center justify-center bg-gray-100">
-      <div className="bg-white rounded-2xl p- w-full max-w-sm text-center space-y-6">
+    <div className="flex items-center justify-center bg-gray-100 ">
+      <div className="bg-white rounded-2xl w-full max-w-sm text-center space-y-6 ">
         {/* Icon */}
         <div className="flex justify-center">
           <div className="bg-orange-100 p-3 rounded-full">
@@ -23,15 +40,18 @@ function ForgotPassword({ onBack ,onclick}) {
         </div>
 
         {/* Email Input */}
-        <div className="text-left">
+        <div className="text-left space-y-1">
           <TextInput
             label="Email Address"
             placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
+          {error && <p className="text-red-500 text-xs">{error}</p>}
         </div>
 
         {/* Reset Button */}
-        <Button onClick={onclick}  label="Reset Password" />
+        <Button loading={loading} onClick={handleResetClick} label="Reset Password" />
 
         {/* Back to Login */}
         <button

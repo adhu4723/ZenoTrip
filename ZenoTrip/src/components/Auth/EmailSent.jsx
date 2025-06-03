@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Mail } from 'lucide-react'; // Optional: Use your own icon
 import Button from '../common/Button';
+import { AuthContext } from '../../context/AuthContext';
 
-function EmailSent({ email = "loremipsum@gmail.com", onBack, onResend }) {
+function EmailSent({  onBack, onResend }) {
+  const {email}=useContext(AuthContext)
   return (
     <div className="flex items-center justify-center bg-gray-100">
       <div className="bg-white rounded-2xl  w-full text-center space-y-6">

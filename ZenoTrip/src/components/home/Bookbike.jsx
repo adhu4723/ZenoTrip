@@ -93,7 +93,7 @@ function Bookbike() {
       <img
         width={600}
         className='absolute lg:block hidden -bottom-10 right-0'
-        src="public/images/bike picture.png"
+        src="/ZenoTrip/images/bike picture.png"
         alt=""
       />
     </div>

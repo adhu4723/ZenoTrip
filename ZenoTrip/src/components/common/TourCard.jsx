@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function TourCard({data}) {
   return (
-    <div className='w-[300px]  space-y-2'>
+    <div className='lg:w-[300px] w-[335px]  space-y-2'>
         <img className='h-[250px] rounded-2xl' src={data?data.images[0]:"public/images/tour/Rectangle 16.png"} alt="" />
         <h1 className='lg:text-xl text-lg font-semibold'>{data?.packagename||'Lucca Bike Tour'}</h1>
         <p>from <span className='font-semibold text-color lg:text-2xl'>₹{data.adultprice} </span> </p>
