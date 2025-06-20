@@ -15,6 +15,7 @@ import AboutUs from './pages/AboutUs'
 import ScrollToTop from './components/ScrollToTop'
 import TourPackages from './pages/TourPackages'
 import SearchResult from './pages/SearchResult'
+import Mytickets from './pages/Mytickets'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,7 +28,9 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/packagedetails/:id' element={<PackageDetails />}></Route>
           <Route element={<ProtectRoute />}>
-          <Route path='/purchase' element={<TourPurchase />} />
+            <Route path='/purchase' element={<TourPurchase />} />
+            <Route path='/mytickets' element={<Mytickets />} />
+
           </Route>
           <Route path='/about' element={<AboutUs />}></Route>
           <Route path='/search' element={<SearchResult />}></Route>

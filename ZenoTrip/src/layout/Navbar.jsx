@@ -77,7 +77,7 @@ function Navbar({ showAuth }) {
                 </button>
                 {dropdownOpen && (
                   <div className='w-fit rounded text-center bg-white absolute -bottom-24 -left-18 shadow text-nowrap flex flex-col'>
-                    <div className='border-b cursor-pointer border-gray-200 px-6 py-2 flex gap-2'><Ticket/> My Tickets</div>
+                    <Link to={'/mytickets'} className='border-b cursor-pointer border-gray-200 px-6 py-2 flex gap-2'><Ticket/> My Tickets</Link>
                     <div onClick={logout} className='px-6 cursor-pointer py-2 flex gap-2 text-red-600 justify-center'> <LogOut/> Logout</div>
                   </div>
                 )}

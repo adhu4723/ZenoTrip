@@ -31,7 +31,7 @@ function Register({ toggle }) {
             I agree with <span className="text-amber-600">Terms</span> and <span className="text-amber-600">Privacy</span>
           </p>
         </div>
-        <Button label="Create Account" />
+        <Button loading={loading} label="Create Account" />
       </form>
       <p>
         Already have an account?{' '}

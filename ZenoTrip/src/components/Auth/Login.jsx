@@ -86,7 +86,7 @@ function Login({ toggle }) {
   }
 
   if (showSuccess) {
-    return <ResetSuccess onBack={() => setShowSuccess(false)} onContinue={() => navigate('/')} />;
+    return <ResetSuccess onBack={() => setShowSuccess(false)} onContinue={() => {navigate('/'),setShowSuccess(false)}} />;
   }
 
   return (

@@ -7,6 +7,7 @@ export const TicketProvider = ({ children }) => {
     const [adultCount, setAdultCount] = useState(0);
     const [childCount, setChildCount] = useState(0);
     const [infantCount, setInfantCount] = useState(0);
+    const [mytickets,setmytickets]=useState([])
 
    const bookticket = (bookingdata) => {
     // Reset local counts
@@ -76,6 +77,7 @@ export const TicketProvider = ({ children }) => {
 
     const makepayment=()=>{
                 setTicket(prev => ({ ...prev, ispayed:true }));
+                setmytickets((prev)=>[...prev,ticket])
 
     }
 
@@ -92,7 +94,8 @@ export const TicketProvider = ({ children }) => {
                 decrementInfant,
                 makepayment,
                 adultCount,
-                childCount
+                childCount,
+                mytickets
             }}
         >
             {children}
